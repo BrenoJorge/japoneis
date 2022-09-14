@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Japones</title>
+</head>
+
+<body onload="carregar()">
+
+    <header>
+        <h1>Livro Caixa</h1>
+        <div id="sub-header">
+            <p>Filtro :</p>
+            <select onchange="filtrar(this.value)" id="filtro">
+                <option></option>
+            </select>
+            <p>Novo Lançamento</p>
+            <button id="cadastrar" class="btn" onclick="showModal()">+</button>
+        </div>
+    </header>
+    <main>
+        <div class="coluna">
+            <h2>Debitos</h2>
+            <div id="card-debito">
+                <div id="N-lancamento" class="coluna">
+                    <p>N-lancamento</p>
+                    <div id="dado-lancamento-debito">
+                    </div>
+                </div>
+                <div id="data" class="coluna">
+                    <p>Data</p>
+                    <div id="dados-data-debito">
+                    </div>
+                </div>
+                <div id="descricao" class="coluna">
+                    <p>Descricao</p>
+                    <div id="dados-descricao-debito">
+                    </div>
+                </div>
+                <div id="valor" class="coluna">
+                    <p>Valor</p>
+                    <div id="dados-valor-debito">
+                    </div>
+                </div>
+                <div id="tipo" class="coluna">
+                    <p>Tipo</p>
+                    <div id="dados-lancamento-debito">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="coluna">
+            <h2>Créditos</h2>
+            <div id="card-credito">
+                <div id="N-lancamento" class="coluna">
+                    <p>N-lancamento</p>
+                    <div id="dado-lancamento-credito">
+                    </div>
+                </div>
+                <div id="data" class="coluna">
+                    <p>Data</p>
+                    <div id="dados-data-credito">
+                    </div>
+                </div>
+                <div id="descricao" class="coluna">
+                    <p>Descricao</p>
+                    <div id="dados-descricao-credito">
+                    </div>
+                </div>
+                <div id="valor" class="coluna">
+                    <p>Valor</p>
+                    <div id="dados-valor-credito">
+                    </div>
+                </div>
+                <div id="tipo" class="coluna">
+                    <p>Tipo</p>
+                    <div id="dados-lancamento-credito">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <h2 id="saldo"></h2>
+    </footer>
+    <div id="card-cadastrar" class="modal">
+
+        <div id="form-cadastrar">
+
+            <div id="header-cadastrar">
+                <h2>Criar Novo Lançamento</h2>
+                <button id="cancelar" class="btn" onclick="showModal()">X</button>
+            </div>
+            <div id="main-cadastrar">
+                <div class="linha">
+                    <label>Descrição:</label>
+                    <input type="text" placeholder="Cafezinho" id="descricaoC">
+                </div>
+
+                <div class="linha2">
+                    <label>Tipo:</label>
+                    <select id="tipoC">
+                        <option>Entrada</option>
+                        <option>Saida</option>
+                    </select>
+                </div>
+
+                <div class="linha">
+                    <label>Valor:</label>
+                    <input type="number" id="valorC">
+                </div>
+
+            </div>
+            <div class="linha2">
+                <h2>*</h2>
+                <button onclick="cadastrar()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
